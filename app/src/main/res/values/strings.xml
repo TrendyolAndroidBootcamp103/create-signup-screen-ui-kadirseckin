@@ -15,7 +15,7 @@
     <string name="invalidEmail">Email is invalid.</string>
     <string name="shortPassword">Password is too short.</string>
     <string name="longPassword">Password is too long.</string>
-    <string name="badEmailFormat">Password must contain one digit, one uppercase letter, one lowercase letter and one special character.</string>
+    <string name="badPasswordFormat">Password must contain one digit, one uppercase letter, one lowercase letter and one special character.</string>
     <string name="userNameRequired">Username is required.</string>
     <string name="badUserNameFormat">Username can only include a-z, 0-9 and _ characters.</string>
     <string name="shortUserName">Username is too short.</string>

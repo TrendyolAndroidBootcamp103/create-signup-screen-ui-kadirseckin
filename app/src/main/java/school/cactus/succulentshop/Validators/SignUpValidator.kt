@@ -17,7 +17,7 @@ class SignUpValidator {
         field.isEmpty() -> R.string.passwordRequired
         field.length <= 7 -> R.string.shortPassword
         field.length >= 40 -> R.string.longPassword
-        !field.passwordCharacterControl() -> R.string.badEmailFormat
+        !field.passwordCharacterControl() -> R.string.badPasswordFormat
         else -> null
     }
 
@@ -39,7 +39,7 @@ class SignUpValidator {
     private fun String.emailCharacterControl() = any { it == '@' } && any { it == '.' }
     private fun String.userNameCharacterControl() = all { it.isLetterOrDigit() || it == '_' }
     private fun String.passwordCharacterControl() =
-        isContainsLowerCase() && isContainsUpperCase() && isContainsSpecialCharacter() && isContainsDigit()
+            isContainsLowerCase() && isContainsUpperCase() && isContainsSpecialCharacter() && isContainsDigit()
 
 
 }
