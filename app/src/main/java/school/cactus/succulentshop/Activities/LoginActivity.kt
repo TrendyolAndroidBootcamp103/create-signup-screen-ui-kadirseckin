@@ -1,8 +1,12 @@
-package school.cactus.succulentshop
+package school.cactus.succulentshop.Activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
+import school.cactus.succulentshop.R
+import school.cactus.succulentshop.Validators.IdentifierValidator
+import school.cactus.succulentshop.Validators.PasswordValidator
 import school.cactus.succulentshop.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -19,9 +23,14 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.log_in)
 
         binding.apply {
+            //validate
             logInButton.setOnClickListener {
                 passwordInputLayout.validate()
                 identifierInputLayout.validate()
+            }
+            //navigate
+            createAccountButton.setOnClickListener {
+                navigateToSignUpActivity()
             }
         }
     }
@@ -38,5 +47,10 @@ class LoginActivity : AppCompatActivity() {
         binding.identifierInputLayout -> identifierValidator
         binding.passwordInputLayout -> passwordValidator
         else -> throw IllegalArgumentException("Cannot find any validator for the given TextInputLayout")
+    }
+
+    private fun navigateToSignUpActivity() {
+        val intent = Intent(this, SignUpActivity::class.java)
+        startActivity(intent)
     }
 }

@@ -1,4 +1,7 @@
-package school.cactus.succulentshop
+package school.cactus.succulentshop.Validators
+
+import school.cactus.succulentshop.R
+import school.cactus.succulentshop.Validators.Interfaces.Validator
 
 
 class IdentifierValidator : Validator {
@@ -7,4 +10,5 @@ class IdentifierValidator : Validator {
         field.length < 5 -> R.string.identifier_is_too_short
         else -> null
     }
+
 }
